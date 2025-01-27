@@ -1,0 +1,161 @@
+﻿/* إعدادات الجسم */
+body {
+    font-family: 'Almarai', sans-serif;
+    background-color: rgb(246, 227, 248);
+    color: rgb(85, 32, 134);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* يغطي الشاشة بالكامل */
+    background-image: url('../images/2362996.jpg') no-repeat center center/cover;
+}
+
+/* إعدادات المحتوى الرئيسي */
+main {
+    flex: 1; /* يجعل المحتوى الرئيسي يتمدد لملء الشاشة */
+    padding: 20px 15px; /* مسافة داخلية للمحتوى */
+}
+
+/* تنسيق Navbar */
+.navbar {
+    background-color: rgb(85, 32, 134); /* لون الخلفية */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    padding: 10px 15px; /* مسافة داخلية */
+}
+
+    .navbar .navbar-brand {
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+        .navbar .navbar-brand:hover {
+            color: #ffcc00;
+        }
+
+    .navbar a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+        .navbar a:hover {
+            color: #ffcc00;
+            text-decoration: underline;
+        }
+
+/* أيقونات التواصل الاجتماعي */
+.social-icons i {
+    color: white;
+    margin: 0 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+    .social-icons i:hover {
+        color: #ffcc00;
+        transform: scale(1.2); /* تكبير الأيقونات عند المرور */
+    }
+
+/* الكروت */
+.card {
+    height: auto;
+    margin: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background-color: white;
+}
+
+    .card:hover {
+        transform: scale(1.05); /* تكبير الكرت عند المرور */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* زيادة الظل */
+    }
+
+    .card img {
+        width: 100%; /* عرض الصورة بالكامل */
+        height: 200px; /* ارتفاع الصورة */
+        object-fit: cover; /* جعل الصورة مناسبة داخل الكرت */
+        border-radius: 5px 5px 0 0; /* زاوية مستديرة للصورة */
+    }
+
+.card-body h3 {
+    font-size: 1.2rem; /* تكبير حجم الخط */
+    color: rgb(85, 32, 134);
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* الروابط */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+/* تنسيق الفوتر */
+footer {
+    background-color: rgb(85, 32, 134);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* دفع الفوتر للأسفل */
+}
+
+    footer p {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    footer a {
+        color: #ffcc00;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+@media (min-width: 768px) {
+    .card-body h3 {
+        font-size: 1.4rem; 
+    }
+}
+
+@media (max-width: 576px) {
+    .card img {
+        height: 150px; 
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.typing-animation {
+    font-family: 'Almarai', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(85, 32, 134);
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 0; /* يبدأ العرض من الصفر */
+    animation: typing 5s steps(50, end) forwards; /* فقط تأثير الكتابة */
+}

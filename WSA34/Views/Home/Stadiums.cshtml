@@ -1,0 +1,39 @@
+﻿@using WorldCup.Models
+@model IEnumerable<Stadiums>
+
+<body dir="rtl" style="background-color: #f8f9fa;">
+    <main>
+        <div class="container mx-auto py-8">
+            <!-- Title -->
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-bold text-blue-800">الملاعب المتوفرة</h2>
+                <p class="text-gray-600">اكتشف معلومات عن الملاعب في السعودية</p>
+            </div>
+
+            <!-- Card Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach (var stadium in Model)
+                {
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                        <!-- Stadium Image -->
+                        <div class="aspect-w-16 aspect-h-9">
+                            <img src="@stadium.Icon" alt="@stadium.Name" class="w-full h-full object-cover" style="width: 300px; height: 300px;" />
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2 text-blue-700">@stadium.Name</h3>
+                            <p class="text-gray-600 mb-1">المدينة: @stadium.City</p>
+                            <p class="text-gray-600 mb-1">السعة: @stadium.Capacity متفرج</p>
+                            <p class="text-gray-600 mb-4">@stadium.Description</p>
+                            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                                عرض التفاصيل
+                            </a>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </main>
+</body>

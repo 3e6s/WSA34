@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Categories>
+<body dir="rtl" style="position: relative; ; background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <main>
+        <div class="container">
+            <!-- Animation for typing text -->
+            <div class="row mt-4 justify-content-center text-center">
+                <div style="width: 100%; max-width: 90%; margin: 0 auto;">
+                    <p class="typing-animation" style="
+            font-size: calc(1rem + 1vw); /* حجم النص يعتمد على عرض الشاشة */
+            word-break: break-word; /* اجعل النص يلتف تلقائياً */
+            line-height: 1.6; /* ارتفاع السطر لتحسين القراءة */
+            text-align: center; /* محاذاة النص في المنتصف */
+        ">              
+                     تعرف على الرياضة في السعودية 
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-5 justify-content-center">
+                @foreach (var items in Model)
+                {
+                    <div class="col-md-4">
+                        <a asp-action="@items.Url" class="text-decoration-none">
+                            <div class="card">
+                                <img src="@items.Image" alt="Logo">
+                                <div class="card-body">
+                                    <h3><strong>@items.Name</strong></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="row">
+            <div class="col">
+                <a asp-action="What34" class="text-decoration-none">
+                    <div class="card">
+                        <img src="~/Images/Saudi-Arabia-lists-5-cities-to-host-FIFA-World-Cup-2034-Saudi-Expatriates.com_.jpeg" alt="Logo">
+                        <div class="card-body">
+                            <h3><strong>تعرف على كأس العالم 34</strong></h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div>
+    </main>
+</body>

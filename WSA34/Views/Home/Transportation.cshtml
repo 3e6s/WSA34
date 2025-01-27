@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Transportation>
+
+<body dir="rtl" style="background-color: #f8f9fa;">
+    <main>
+        <div class="container py-5">
+            <!-- Animation for typing text -->
+            <div class="text-center mb-5">
+                <p class="typing-animation" style="
+                    font-size: calc(1rem + 1vw); /* حجم النص يعتمد على عرض الشاشة */
+                    word-break: break-word; /* اجعل النص يلتف تلقائياً */
+                    line-height: 1.6; /* ارتفاع السطر لتحسين القراءة */
+                    text-align: center; /* محاذاة النص في المنتصف */
+                ">
+                    تعرف على المواصلات في السعودية
+                </p>
+            </div>
+
+            <!-- Card Grid -->
+            <div class="row g-4">
+                @foreach (var items in Model)
+                {
+                    <div class="col-md-4 col-lg-3">
+                        <div class="card shadow-lg border-0 rounded-lg">
+                            <!-- Image -->
+                            <img src="@items.ImageUrl" alt="Logo" class="card-img-top" style="height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;" />
+
+                            <!-- Card Body -->
+                            <div class="card-body text-center">
+                                <h3 class="card-title text-primary">@items.Name</h3>
+                                <p class="card-text text-muted">المدينة: @items.City</p>
+                                <p class="card-text">النوع: <strong>@items.Type</strong></p>
+                                <p class="card-text">السعر: <span class="text-success">@items.Price ريال</span></p>
+                                <p class="card-text text-muted">@items.Description</p>
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div class="card-footer text-center bg-light">
+                                <a href="#" class="btn btn-primary btn-sm">عرض التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </main>
+</body>
